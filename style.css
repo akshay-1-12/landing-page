@@ -1,0 +1,105 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  overflow: hidden;
+}
+
+/* Animated Background */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(60deg, #ff6ec4, #7873f5, #4ADEDE, #C4FCEF);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+  z-index: 0;
+  opacity: 0.9;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 15, 30, 0.5);
+  z-index: 1;
+}
+
+/* Content */
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 700px;
+  padding: 20px;
+}
+
+/* Animated Title */
+.animated-title {
+  font-size: 3rem;
+  line-height: 1.2;
+  animation: fadeInUp 2s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Paragraph */
+.content p {
+  margin: 20px 0;
+  font-size: 1.2rem;
+  color: #e0e0e0;
+}
+
+/* CTA Button */
+.cta-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #ffffff;
+  color: #333;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #000;
+  color: #fff;
+  transform: scale(1.05);
+}
